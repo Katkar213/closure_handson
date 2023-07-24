@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+       <pre> Q.1 function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());  </pre></h2>
+
+<pre>Ans:It will alert count from 1 to 4 in our running environmentor in browser.</pre>
+
+<h2><pre>Q.2 let count = 0;
+    (function () {
+      if (count === 0) {
+        let count = 1;
+        console.log(count); // What is logged?
+      }
+      console.log(count); // What is logged?
+    })();</pre></h2>
+
+<pre>Ans: zero and one will be printed as an output in above program because let is block scope and it will not accessible outer the 
+    block so that output printed like that.
+</pre>
+
+<h2><pre>Q.3 for (var i = 0; i < 3; i++) {
+    setTimeout(function log() {
+      console.log(i); // What is logged?
+    }, 1000);
+  }</pre></h2>
+
+<pre>Ans: It will print 3 for 3 times as output becaue of set Timeout it will initialize "i" value to
+    3 and it will print 3 for 3 times.
+</pre>
+
+<h2><pre>Q.4 Write a code to calculate area of a rectangle using inner function. In this case outer function
+     should accept parameter length and inner function should accept parameter breadth.</pre></h2>
+
+<pre>Ans: function outer(length){
+    function inner(breadth){
+         let area=length*breadth;
+         console.log(`Area is ${area}`);
+     }
+     inner(2);
+ }
+ outer(10);
+
+It will show us area of rectangle by usig closure concept that it will </pre>
+
+<h2><pre>Q.5 Take a variable in outer function and create an inner function to increase the counter every time it is called</pre></h2>
+
+<pre> Ans: function outer(count){
+    function inner(){
+        count++;
+        console.log(count);
+    }
+    inner();
+}
+outer(1);
+
+output: if we call inner() function it will increase the count variable and it will show as an increase count ehenevr it will calling.  </pre>
+
+<h2><pre>Q.6 Print Output
+
+    var a = 12;
+    (function () {
+      alert(a);
+    })();</pre></h2>
+
+<pre>Ans:It will alert to our window by 12</pre>
+
+<h2><pre>Q.7 var a = 10;
+    var x = (function () {
+      var a = 12;
+      return function () {
+        alert(a);
+      };
+    })();
+    x();</pre></h2>
+
+    <pre>Ans: It will alert 12 as in window and it print 12 not 10 because it is function scope.</pre>
+
+  <h2><pre>Q.8 var globalVar = ""xyz"";
+
+    (function outerFunc(outerArg) {
+        var outerVar = 'a';
+        
+        (function innerFunc(innerArg) {
+        var innerVar = 'b';
+        
+        console.log(
+            ""outerArg = "" + outerArg + ""\n"" +
+            ""innerArg = "" + innerArg + ""\n"" +
+            ""outerVar = "" + outerVar + ""\n"" +
+            ""innerVar = "" + innerVar + ""\n"" +
+            ""globalVar = "" + globalVar);
+        
+        })(456);
+    })(123);</pre></h2> 
+    
+    <pre>Ans: outerArg=123
+      innerArg = 456
+      outerVar = a
+      innerVar= b
+      globalVar =xyz
+    
+    Explanation: It will straight print values which we can passes at time of function calling.</pre>
+
+    <script src="./script.js"></script>
+</body>
+</html>
